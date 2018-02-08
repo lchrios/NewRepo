@@ -4,8 +4,19 @@
     <meta charset="utf-8">
     <meta name="description" content="Here I am, I'm Chris!">
     <title>Here I am, I'm Chris!</title>
-    <link rel="stylesheet" href="scss/sticky-shrinknav.scss">
-    <script src="js/sticky-shrinknav.js"></script>
+    <link rel="stylesheet" href="sticky-shrinknav.scss">
+    <script>
+      $(function() {
+        $(window).scroll(function() {
+          var winTop = $(window).scrollTop();
+          if (winTop >= 30) {
+            $("body").addClass("sticky-shrinknav-wrapper");
+          } else{
+            $("body").removeClass("sticky-shrinknav-wrapper");
+          }
+        });
+      });
+    </script>
   </head>
   <body>
     <header class="sticky-shrinknav-header">
@@ -17,7 +28,6 @@
         <li><a href="#">Contact</a></li>
       </ul>
     </header>
-
     <div class="row align-center">
       <div class="column medium-9">
         <div class="row">
